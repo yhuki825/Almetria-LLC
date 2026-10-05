@@ -8,15 +8,15 @@
   デプロイ：Cloudflare Pages Direct Upload（このファイルをフォルダに入れてアップロード）
   外部依存：Google Fonts、Unsplash 画像（読み込み失敗時はグラデーション背景に自動切替）
 
-  コンセプト：「測れるものは、育てられる。」
-    社名の「メトリア（-metria＝測ること）」から着想。
-    太陽の光 → 発電量（kWh）、営業の努力 → 商談件数（件）、事務 → 本業に戻る時間（h）。
-    事業ごとの“単位”をビジュアルの軸にし、3つの事業が直感的に伝わる構成にしています。
-    ヒーローは太陽光パネルのセルを光が走るキャンバス演出、
-    右端のスクロールレールは「発電量メーター」（スクロールに応じて kWh が積算）です。
+  コンセプト：「つなぐほど、道は広がる。」
+    社名の由来 AL＝進化／MET＝道／RIA＝広がる（「広がる繋がりの道を作る」）から着想。
+    太陽の光を暮らしへ、商品をお客様へ、人を本業へ——3つの事業を「つなぐ仕事」として描き、
+    つながりが道になり、その道が広がっていく様子をビジュアルの軸にしています。
+    ヒーローは点と点を結ぶ道に光が伝わり、枝分かれしながら広がっていくキャンバス演出、
+    右端のスクロールレールは「道のり」（破線の道を光が進み、いまの区間番号を表示）です。
 
   ────────── 公開前の確認事項（チェックリスト）──────────
-  [ ] 1. 社名の由来「メトリア＝測ること」という解釈で問題ないか（本来の由来があれば差し替え）
+  [x] 1. 社名の由来：先方回答（AL＝進化／MET＝道／RIA＝広がる）に差し替え済み（2026-10-05）
   [ ] 2. 代表者の肩書き：合同会社のため「代表社員」と表記。業務執行社員等の表記希望があれば変更
   [ ] 3. 所在地：建物名・階数・部屋番号の有無
   [ ] 4. 設立年月日・資本金・取引銀行・従業員数（未確認のため会社概要ではコメントアウト）
@@ -40,10 +40,10 @@
 <meta name="description" content="アルメトリア合同会社は、太陽光発電システム・省エネルギー機器の販売代理、太陽光発電事業の営業・マーケティング支援、一般事務・経理事務の受託を行う会社です。">
 <!-- 要確認：OGP画像を用意したら og:image を追加 -->
 <meta property="og:title" content="アルメトリア合同会社">
-<meta property="og:description" content="光も、商いも、確かな数字に。太陽光・省エネ機器の販売代理と、営業・事務の支援。">
+<meta property="og:description" content="つなぐほど、道は広がる。太陽光・省エネ機器の販売代理と、営業・事務の支援。">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0E1B2C">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1B2C'/%3E%3Cpath d='M16 40a16 16 0 0 1 32 0' fill='%23F2B544'/%3E%3Cpath d='M12 46h40M18 46v-4M26 46v-3M32 46v-5M38 46v-3M46 46v-4' stroke='%2393A1B3' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1B2C'/%3E%3Cpath d='M20 32a12 12 0 0 1 24 0' fill='%23F2B544'/%3E%3Cpath d='M10 33h44M30 33L20 54M34 33L44 54' stroke='%2393A1B3' stroke-width='2.4' fill='none'/%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,24 +110,18 @@ a{color:inherit}
 .menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 .m-progress{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--sun);transform:scaleX(0);transform-origin:left;display:none}
 
-/* ---------- Scroll rail: 発電量メーター ---------- */
+/* ---------- Scroll rail: 道のり ---------- */
 .rail{
   position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:90;
   height:56vh;width:44px;pointer-events:none;
 }
-.rail-scale{position:absolute;right:0;top:0;bottom:0;width:14px;
-  background:
-    repeating-linear-gradient(to bottom, var(--silver) 0 1px, transparent 1px 10%),
-    repeating-linear-gradient(to bottom, rgba(147,161,179,.45) 0 1px, transparent 1px 2%);
-  background-size:14px 100%, 7px 100%;background-repeat:no-repeat;background-position:right top,right top;
-  opacity:.7}
-.rail-line{position:absolute;right:0;top:0;bottom:0;width:1px;background:rgba(147,161,179,.35)}
+.rail-line{position:absolute;right:0;top:0;bottom:0;width:1px;background:repeating-linear-gradient(to bottom,rgba(147,161,179,.55) 0 5px,transparent 5px 11px)}
 .rail-fill{position:absolute;right:0;top:0;width:1px;height:100%;background:var(--sun);transform:scaleY(0);transform-origin:top}
 .rail-sun{position:absolute;right:-6px;top:0;width:13px;height:13px;border-radius:50%;background:var(--sun);
   box-shadow:0 0 0 4px rgba(242,181,68,.18),0 0 18px rgba(242,181,68,.7);transform:translateY(-50%)}
-.rail-read{position:absolute;right:0;top:calc(100% + 14px);font-family:var(--mono);font-size:11px;color:var(--silver);white-space:nowrap;letter-spacing:.02em}
+.rail-read{position:absolute;right:0;top:calc(100% + 14px);font-family:var(--mono);font-size:11px;color:var(--silver);white-space:nowrap;letter-spacing:.04em}
 .rail-read b{color:var(--sun-soft);font-weight:500}
-.on-paper .rail-scale{opacity:.9;filter:brightness(.55)}
+.on-paper .rail-line{filter:brightness(.5)}
 .on-paper .rail-read{color:var(--ink-2)}
 .on-paper .rail-read b{color:#A36F07}
 
@@ -160,28 +154,33 @@ a{color:inherit}
 .sec.paper{background:var(--paper);color:var(--ink)}
 .sec-head{display:grid;grid-template-columns:auto 1fr;align-items:end;gap:20px 28px;margin-bottom:clamp(48px,7vw,84px)}
 .sec-title{font-family:var(--serif);font-weight:700;font-size:clamp(26px,3.4vw,40px);line-height:1.5;letter-spacing:.1em;margin:0}
-.sec-rule{height:12px;align-self:center;
-  background:
-    linear-gradient(currentColor,currentColor) left bottom/100% 1px no-repeat,
-    repeating-linear-gradient(to right,currentColor 0 1px,transparent 1px 24px) left bottom/100% 12px no-repeat;
-  opacity:.28}
+.sec-rule{height:9px;align-self:center;position:relative;
+  background:repeating-linear-gradient(to right,rgba(147,161,179,.6) 0 6px,transparent 6px 13px) left center/calc(100% - 14px) 1px no-repeat}
+.sec-rule::after{content:"";position:absolute;right:0;top:0;width:9px;height:9px;border-radius:50%;background:var(--sun)}
+.paper .sec-rule{background-image:repeating-linear-gradient(to right,rgba(22,32,44,.35) 0 6px,transparent 6px 13px)}
+.paper .sec-rule::after{background:#E9A52B}
 
 /* ---------- Concept ---------- */
 .concept-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(40px,7vw,96px);align-items:center}
 .concept-statement{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3.8vw,46px);line-height:1.6;letter-spacing:.08em;margin:0 0 36px}
 .concept-body p{margin:0 0 1.2em;color:#C9D3DE;max-width:32em}
-.name-note{display:flex;gap:18px;align-items:baseline;margin-top:40px;padding-top:24px;border-top:1px solid var(--busbar)}
-.name-note span{font-family:var(--latin);font-size:22px;letter-spacing:.1em;color:#fff}
-.name-note small{color:var(--silver);font-size:13px}
+.name-note{margin-top:40px;padding-top:24px;border-top:1px solid var(--busbar)}
+.name-note .name-note-label{margin:0 0 14px;color:var(--silver);font-size:12px;letter-spacing:.2em}
+.name-parts{display:flex;flex-wrap:wrap;gap:12px 28px;margin:0 0 14px}
+.name-parts div{display:flex;gap:10px;align-items:baseline}
+.name-parts dt{font-family:var(--latin);font-size:22px;letter-spacing:.1em;color:#fff}
+.name-parts dd{margin:0;color:var(--silver);font-size:13px}
+.name-note .name-note-text{margin:0;color:var(--silver);font-size:13px;line-height:1.9}
 
 .flow svg{width:100%;height:auto;overflow:visible}
-.flow .ln{fill:none;stroke:var(--silver);stroke-width:1.2;stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);transition:stroke-dashoffset 1.6s var(--ease)}
+.flow .ln{fill:none;stroke:var(--silver);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s var(--ease)}
 .flow .ln.sun-ln{stroke:var(--sun)}
+.flow .road{stroke-width:2.2;stroke-dasharray:.02 .03;opacity:0;transition:opacity .8s var(--ease)}
 .flow .fade{opacity:0;transition:opacity .8s var(--ease)}
-.flow .needle{transform-box:view-box;transform-origin:560px 200px;transform:rotate(-70deg);transition:transform 1.8s cubic-bezier(.3,1.4,.4,1) 1.2s}
 .flow.is-in .ln{stroke-dashoffset:0}
+.flow.is-in .road{opacity:.9;animation:road 3s linear 2.2s infinite}
 .flow.is-in .fade{opacity:1}
-.flow.is-in .needle{transform:rotate(38deg)}
+@keyframes road{to{stroke-dashoffset:-.1}}
 .flow .d1{transition-delay:.2s}.flow .d2{transition-delay:.6s}.flow .d3{transition-delay:1s}.flow .d4{transition-delay:1.4s}
 .flow text{font-family:var(--sans);fill:#C9D3DE;font-size:14px;letter-spacing:.08em}
 .flow text.mono{font-family:var(--mono);fill:var(--sun-soft);font-size:12px}
@@ -307,8 +306,8 @@ a{color:inherit}
   *,*::before,*::after{animation:none !important;transition:none !important}
   .shutter{clip-path:none}
   .flow .ln{stroke-dashoffset:0}
+  .flow .road{opacity:.9}
   .flow .fade{opacity:1}
-  .flow .needle{transform:rotate(38deg)}
   .steps-track{transform:scaleX(1)}
 }
 </style>
@@ -320,9 +319,10 @@ a{color:inherit}
   <div class="header-inner">
     <a class="brand" href="#top" aria-label="アルメトリア合同会社 トップへ">
       <svg viewBox="0 0 40 40" aria-hidden="true">
-        <path d="M8 26a12 12 0 0 1 24 0" fill="#F2B544"/>
-        <path d="M4 31h32" stroke="#93A1B3" stroke-width="1.4"/>
-        <path d="M8 31v-3M14 31v-2M20 31v-4M26 31v-2M32 31v-3" stroke="#93A1B3" stroke-width="1.4"/>
+        <path d="M12 20a8 8 0 0 1 16 0" fill="#F2B544"/>
+        <path d="M4 21h32" stroke="#93A1B3" stroke-width="1.4"/>
+        <path d="M18.6 21L12 36M21.4 21L28 36" stroke="#93A1B3" stroke-width="1.4" fill="none"/>
+        <path d="M20 25v2.4M20 30v3" stroke="#F2B544" stroke-width="1.2"/>
       </svg>
       <span class="brand-name"><b>Almetria</b><small>アルメトリア合同会社</small></span>
     </a>
@@ -342,13 +342,12 @@ a{color:inherit}
   <div class="m-progress" id="mProgress" aria-hidden="true"></div>
 </header>
 
-<!-- スクロールレール：発電量メーター（装飾） -->
+<!-- スクロールレール：道のり（装飾） -->
 <div class="rail" id="rail" aria-hidden="true">
-  <div class="rail-scale"></div>
   <div class="rail-line"></div>
   <div class="rail-fill" id="railFill"></div>
   <div class="rail-sun" id="railSun"></div>
-  <div class="rail-read"><b id="kwh">0.0</b> kWh</div>
+  <div class="rail-read">ROUTE <b id="railNo">01</b> / 06</div>
 </div>
 
 <main id="main">
@@ -358,14 +357,14 @@ a{color:inherit}
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="hero-lead">太陽光・省エネルギー機器の販売代理から、<span class="nw">営業とマーケティングの支援、</span><span class="nw">日々の事務まで。</span>事業を“測れるもの”にして、<span class="nw">一歩ずつ前へ進めます。</span></p>
+        <p class="hero-lead">太陽光・省エネルギー機器の販売代理から、<span class="nw">営業とマーケティングの支援、</span><span class="nw">日々の事務まで。</span>人と人、事業と未来をつなぎ、<span class="nw">新しい道を広げていきます。</span></p>
         <ul class="hero-business">
-          <li><i>kWh</i>太陽光・省エネ機器の販売代理</li>
-          <li><i>件</i>営業・マーケティング支援</li>
-          <li><i>h</i>事務・経理の受託</li>
+          <li><i>01</i>太陽光・省エネ機器の販売代理</li>
+          <li><i>02</i>営業・マーケティング支援</li>
+          <li><i>03</i>事務・経理の受託</li>
         </ul>
       </div>
-      <h1 class="hero-title"><span>光も、商いも、</span><span>確かな数字に。</span></h1>
+      <h1 class="hero-title"><span>つなぐほど、</span><span>道は広がる。</span></h1>
       <span class="hero-scroll" aria-hidden="true">scroll</span>
     </div>
   </section>
@@ -379,47 +378,54 @@ a{color:inherit}
       </div>
       <div class="concept-grid">
         <div class="concept-body">
-          <p class="concept-statement">測れるものは、<br>育てられる。</p>
-          <p>太陽の光は発電量に。営業の努力は商談の数に。日々の事務は、正確な帳簿と本業に使える時間に。</p>
-          <p>目に見えにくいものを確かな数字に置き換え、次の一歩をお客様と一緒に決めていく。<span class="nw">それがアルメトリアの仕事です。</span></p>
+          <p class="concept-statement">広がる繋がりの、<br>道をつくる。</p>
+          <p>太陽の光を、暮らしと事業の力へ。商品とサービスを、必要とするお客様へ。日々の事務を整えて、人を本業へ。私たちの仕事は、どれも何かと何かを“つなぐ”ことです。</p>
+          <p>ひとつのつながりが、次の道をひらく。その道が、また新しい出会いへと広がっていく。<span class="nw">人と人、事業と未来をつなぎ、</span><span class="nw">新しい道を広げていく。</span><span class="nw">それがアルメトリアです。</span></p>
           <div class="name-note">
-            <span>metria</span>
-            <!-- 要確認：社名の由来。「-metria＝測ること（ギリシャ語 metron 由来）」という解釈で仮置き -->
-            <small>社名の「メトリア」は、“測ること”を意味する言葉に由来しています。</small>
+            <p class="name-note-label">社名の由来</p>
+            <dl class="name-parts">
+              <div><dt>AL</dt><dd>進化</dd></div>
+              <div><dt>MET</dt><dd>道</dd></div>
+              <div><dt>RIA</dt><dd>広がる</dd></div>
+            </dl>
+            <p class="name-note-text">3つのイメージを組み合わせ、「広がる繋がりの道を作る」という想いを込めた社名です。事業や人とのつながりを広げ、<span class="nw">その先に新しい道をつくっていきます。</span></p>
           </div>
         </div>
         <div class="flow" id="flow">
           <svg viewBox="0 0 640 340" role="img" aria-labelledby="flowTitle">
-            <title id="flowTitle">太陽の光をパネルで受け、メーターで数字として確かめる流れの図</title>
-            <!-- sun -->
-            <circle class="ln sun-ln d1" cx="80" cy="90" r="34" style="--len:214"/>
-            <g class="fade d1">
-              <path d="M80 36v-14M80 158v-14M26 90H12M148 90h-14M42 52l-10-10M118 128l10 10M118 52l10-10M42 128l-10 10" stroke="#F2B544" stroke-width="1.2"/>
+            <title id="flowTitle">ひとつの点が進化し、道となってつながり、その先で枝分かれして広がっていく様子の図</title>
+            <!-- AL：進化（芽生えた点が輪を広げる） -->
+            <circle class="ln sun-ln d1" cx="80" cy="170" r="30" pathLength="1"/>
+            <circle class="ln d1" cx="80" cy="170" r="46" pathLength="1" opacity=".45"/>
+            <circle class="fade d1" cx="80" cy="170" r="6" fill="#F2B544"/>
+            <!-- MET：道 -->
+            <path class="ln d2" d="M110 170 C 190 170 200 108 280 118 S 380 206 470 176" pathLength="1"/>
+            <path class="ln sun-ln road d2" d="M110 170 C 190 170 200 108 280 118 S 380 206 470 176" pathLength="1"/>
+            <!-- RIA：広がる（枝分かれ） -->
+            <g class="branch">
+              <path class="ln sun-ln d3" d="M470 176 C 500 150 520 90 560 70" pathLength="1"/>
+              <path class="ln sun-ln d3" d="M470 176 C 520 166 570 140 608 132" pathLength="1"/>
+              <path class="ln sun-ln d3" d="M470 176 C 520 190 570 210 608 212" pathLength="1"/>
+              <path class="ln sun-ln d3" d="M470 176 C 500 206 520 246 560 260" pathLength="1"/>
+              <path class="ln d4" d="M560 70 L 616 44 M560 70 L 628 86 M608 212 L 634 248 M560 260 L 612 286" pathLength="1" opacity=".6"/>
             </g>
-            <!-- rays to panel -->
-            <path class="ln sun-ln d2" d="M114 104 L236 170" style="--len:140"/>
-            <path class="ln sun-ln d2" d="M104 120 L236 214" style="--len:165"/>
-            <!-- panel -->
-            <g class="fade d2">
-              <rect x="236" y="150" width="140" height="92" fill="rgba(147,161,179,.08)" stroke="#93A1B3" stroke-width="1.2"/>
-              <path d="M271 150v92M306 150v92M341 150v92M236 180.6h140M236 211.3h140" stroke="#93A1B3" stroke-width=".8" opacity=".6"/>
+            <g class="fade d3" fill="#F2B544">
+              <circle cx="470" cy="176" r="5"/>
+              <circle cx="560" cy="70" r="4"/><circle cx="608" cy="132" r="4"/>
+              <circle cx="608" cy="212" r="4"/><circle cx="560" cy="260" r="4"/>
             </g>
-            <!-- wire -->
-            <path class="ln d3" d="M376 196 H470" style="--len:94"/>
-            <!-- meter -->
-            <circle class="ln d3" cx="560" cy="200" r="72" style="--len:453"/>
-            <g class="fade d3">
-              <path d="M509 251a72 72 0 0 1 0-102M611 149a72 72 0 0 1 0 102" fill="none" stroke="#F2B544" stroke-width="3" opacity=".35"/>
-              <path d="M500 200h10M610 200h10M560 140v10M518 158l7 7M602 158l-7 7" stroke="#93A1B3" stroke-width="1.2"/>
+            <g class="fade d4" fill="#93A1B3">
+              <circle cx="616" cy="44" r="3"/><circle cx="628" cy="86" r="3"/>
+              <circle cx="634" cy="248" r="3"/><circle cx="612" cy="286" r="3"/>
             </g>
-            <line class="needle" x1="560" y1="200" x2="560" y2="146" stroke="#F2B544" stroke-width="2"/>
-            <circle cx="560" cy="200" r="4" fill="#F2B544"/>
             <!-- labels -->
             <g class="fade d4">
-              <text x="80" y="200" text-anchor="middle">光を受ける</text>
-              <text x="306" y="278" text-anchor="middle">かたちを整える</text>
-              <text x="560" y="304" text-anchor="middle">数字で確かめる</text>
-              <text class="mono" x="560" y="238" text-anchor="middle">kWh / 件 / h</text>
+              <text class="mono" x="80" y="296" text-anchor="middle">AL</text>
+              <text x="80" y="322" text-anchor="middle">進化する</text>
+              <text class="mono" x="290" y="296" text-anchor="middle">MET</text>
+              <text x="290" y="322" text-anchor="middle">道をつくる</text>
+              <text class="mono" x="520" y="296" text-anchor="middle">RIA</text>
+              <text x="520" y="322" text-anchor="middle">広がる</text>
             </g>
           </svg>
         </div>
@@ -440,7 +446,7 @@ a{color:inherit}
           <div class="ph shutter">
             <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1400&q=75" alt="屋外に並ぶ太陽光パネル" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
           </div>
-          <p class="unit" aria-hidden="true">kWh</p>
+          <p class="unit" aria-hidden="true">01</p>
         </div>
         <div class="biz-body">
           <p class="biz-field">太陽光・省エネルギー</p>
@@ -460,7 +466,7 @@ a{color:inherit}
           <div class="ph shutter">
             <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=75" alt="テーブルを囲んで打ち合わせをするチーム" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
           </div>
-          <p class="unit" aria-hidden="true">件</p>
+          <p class="unit" aria-hidden="true">02</p>
         </div>
         <div class="biz-body">
           <p class="biz-field">営業・マーケティング支援</p>
@@ -481,7 +487,7 @@ a{color:inherit}
           <div class="ph shutter">
             <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=75" alt="電卓と書類で経理作業をする手元" onerror="this.parentNode.classList.add('is-fallback');this.remove()">
           </div>
-          <p class="unit" aria-hidden="true">h</p>
+          <p class="unit" aria-hidden="true">03</p>
         </div>
         <div class="biz-body">
           <p class="biz-field">事務・経理サポート</p>
@@ -495,7 +501,7 @@ a{color:inherit}
         </div>
       </article>
 
-      <p class="bridge">届ける力、売る力、支える力。<small>3つの仕事がつながることで、事業をまるごと前へ進めます。</small></p>
+      <p class="bridge">届ける力、売る力、支える力。<small>3つの仕事をつなぎ、事業の先へ続く道をつくります。</small></p>
     </div>
   </section>
 
@@ -508,14 +514,14 @@ a{color:inherit}
       </div>
       <ol class="steps" id="steps">
         <li class="steps-track" aria-hidden="true"></li>
-        <li class="step"><span class="step-no">01</span><h3>測る</h3><p>いまの数字と、現場の声を集めます。</p></li>
-        <li class="step"><span class="step-no">02</span><h3>描く</h3><p>目標と手順を、無理のない計画に落とし込みます。</p></li>
-        <li class="step"><span class="step-no">03</span><h3>動く</h3><p>販売・営業・事務の現場で、実行を担います。</p></li>
-        <li class="step"><span class="step-no">04</span><h3>見直す</h3><p>結果を測り直し、次の打ち手を決めます。</p></li>
+        <li class="step"><span class="step-no">01</span><h3>聴く</h3><p>いまの状況と、現場の声を丁寧に伺います。</p></li>
+        <li class="step"><span class="step-no">02</span><h3>描く</h3><p>目指す先までの道筋を、無理のない計画にします。</p></li>
+        <li class="step"><span class="step-no">03</span><h3>つなぐ</h3><p>販売・営業・事務の現場で、人と仕事をつなぎ実行します。</p></li>
+        <li class="step"><span class="step-no">04</span><h3>広げる</h3><p>生まれたつながりを、次の機会へと広げます。</p></li>
       </ol>
       <p class="loop-note">
         <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M22 10a9 9 0 1 0 1 7" fill="none" stroke="#A36F07" stroke-width="1.6"/><path d="M23 4v6h-6" fill="none" stroke="#A36F07" stroke-width="1.6"/></svg>
-        見直した数字は、そのまま次の「測る」へ。この循環を続けていきます。
+        広がったつながりは、また次の出会いへ。この循環を続けていきます。
       </p>
     </div>
   </section>
@@ -537,7 +543,7 @@ a{color:inherit}
         <div class="msg-text">
           <p>太陽の光は、毎日だれのもとにも降り注いでいます。けれど、それを暮らしや事業の力に変えるには、ふさわしい設備と、それを届ける人の力が欠かせません。</p>
           <p>アルメトリアは、太陽光発電と省エネルギー機器の販売代理を軸に、営業やマーケティング、日々の事務までを支える会社です。</p>
-          <p>どの仕事でも大切にしているのは、成果を曖昧にせず、数字で確かめながら進めること。お客様の事業がひとつずつ前へ進むよう、誠実に手を動かし続けます。</p>
+          <p>社名には「広がる繋がりの道を作る」という想いを込めました。ひとつのつながりが次の道をひらき、その道がまた新しい出会いへと広がっていく。人と人、事業と未来をつなぐ会社であり続けられるよう、誠実に手を動かし続けます。</p>
           <!-- 要確認：肩書き「代表社員」でよいか -->
           <p class="msg-sign">アルメトリア合同会社　代表社員<br><b>小原 慎吾</b></p>
         </div>
@@ -585,9 +591,10 @@ a{color:inherit}
     <div class="foot-inner">
       <a class="brand" href="#top" aria-label="アルメトリア合同会社 トップへ">
         <svg viewBox="0 0 40 40" aria-hidden="true">
-          <path d="M8 26a12 12 0 0 1 24 0" fill="#F2B544"/>
-          <path d="M4 31h32" stroke="#93A1B3" stroke-width="1.4"/>
-          <path d="M8 31v-3M14 31v-2M20 31v-4M26 31v-2M32 31v-3" stroke="#93A1B3" stroke-width="1.4"/>
+          <path d="M12 20a8 8 0 0 1 16 0" fill="#F2B544"/>
+          <path d="M4 21h32" stroke="#93A1B3" stroke-width="1.4"/>
+          <path d="M18.6 21L12 36M21.4 21L28 36" stroke="#93A1B3" stroke-width="1.4" fill="none"/>
+          <path d="M20 25v2.4M20 30v3" stroke="#F2B544" stroke-width="1.2"/>
         </svg>
         <span class="brand-name"><b>Almetria</b><small>アルメトリア合同会社</small></span>
       </a>
@@ -629,10 +636,11 @@ a{color:inherit}
   });
   window.addEventListener('resize', function(){ if(window.innerWidth > 900 && nav.classList.contains('is-open')) setMenu(false); });
 
-  /* ---------- Scroll: header state + 発電量メーター ---------- */
+  /* ---------- Scroll: header state + 道のり ---------- */
   var railFill = document.getElementById('railFill');
   var railSun = document.getElementById('railSun');
-  var kwh = document.getElementById('kwh');
+  var railNo = document.getElementById('railNo');
+  var routeSecs = Array.prototype.slice.call(document.querySelectorAll('main > section'));
   var mProg = document.getElementById('mProgress');
   var rail = document.getElementById('rail');
   var paperSecs = Array.prototype.slice.call(document.querySelectorAll('.sec.paper'));
@@ -645,10 +653,11 @@ a{color:inherit}
     header.classList.toggle('is-scrolled', y > 40);
     railFill.style.transform = 'scaleY(' + p + ')';
     railSun.style.top = (p * 100) + '%';
-    kwh.textContent = (p * 100).toFixed(1);
     mProg.style.transform = 'scaleX(' + p + ')';
+    var mid = window.innerHeight / 2, onPaper = false, no = 1;
+    for(var j=0;j<routeSecs.length;j++){ if(routeSecs[j].getBoundingClientRect().top < mid) no = j + 1; }
+    railNo.textContent = (no < 10 ? '0' : '') + no;
     // rail color switches on light sections
-    var mid = window.innerHeight / 2, onPaper = false;
     for(var i=0;i<paperSecs.length;i++){
       var r = paperSecs[i].getBoundingClientRect();
       if(r.top < mid && r.bottom > mid){ onPaper = true; break; }
@@ -678,71 +687,122 @@ a{color:inherit}
     targets.forEach(function(t){ t.classList.add('is-in'); });
   }
 
-  /* ---------- Hero canvas: 光が走る太陽電池セル ---------- */
+  /* ---------- Hero canvas: 点と点を結ぶ道に光が伝わり、広がっていく ---------- */
   var cv = document.getElementById('heroCanvas');
   var ctx = cv.getContext('2d');
-  var W = 0, H = 0, dpr = 1, cell = 40, gap = 3, cols = 0, rows = 0;
-  var photons = [];
-  var running = true, rafId = null, t0 = performance.now();
+  var W = 0, H = 0, dpr = 1;
+  var nodes = [], edges = [], queue = [];
+  var FADE = reduce ? 1e9 : 2600, SPEED = 0.16; // 光が消えるまでの時間(ms) / 道を進む速さ(px/ms)
+  var running = true, rafId = null, nextWave = 0;
+
+  // 再読み込みしても同じ道の形になるよう、固定シードの乱数を使う
+  var seed = 7;
+  function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+
+  function build(){
+    seed = 7; nodes = []; edges = []; queue = [];
+    var gap = Math.max(84, Math.min(130, W / 12));
+    var cols = Math.ceil(W / gap) + 2, rows = Math.ceil(H / gap) + 2, grid = [];
+    for(var r=0;r<rows;r++){
+      grid[r] = [];
+      for(var c=0;c<cols;c++){
+        var n = {x:(c - .5) * gap + (rnd() - .5) * gap * .7, y:(r - .5) * gap + (rnd() - .5) * gap * .7, adj:[], lit:-1e9};
+        grid[r][c] = n; nodes.push(n);
+      }
+    }
+    function link(a, b){
+      var e = {a:a, b:b, len:Math.hypot(b.x - a.x, b.y - a.y), from:null, t:-1e9};
+      edges.push(e); a.adj.push(e); b.adj.push(e);
+    }
+    for(var r2=0;r2<rows;r2++){
+      for(var c2=0;c2<cols;c2++){
+        var n2 = grid[r2][c2];
+        if(c2 + 1 < cols && rnd() < .72) link(n2, grid[r2][c2 + 1]);
+        if(r2 + 1 < rows && rnd() < .55) link(n2, grid[r2 + 1][c2]);
+        if(r2 + 1 < rows && c2 + 1 < cols && rnd() < .3) link(n2, grid[r2 + 1][c2 + 1]);
+      }
+    }
+  }
+
+  // 1点から光を流し、道をたどって枝分かれしながら広げる
+  function wave(now){
+    var start = nodes[Math.floor(rnd() * nodes.length)];
+    // 画面左寄りの点から始めて、右へ広がって見えるようにする
+    for(var i=0;i<6;i++){ var c = nodes[Math.floor(rnd() * nodes.length)]; if(c.x < start.x && c.x > 0 && c.y > 0 && c.y < H) start = c; }
+    var seen = new Set([start]);
+    queue.push({n:start, t:now, depth:0, seen:seen});
+  }
+
+  function step(now){
+    queue.sort(function(a, b){ return a.t - b.t; });
+    while(queue.length && queue[0].t <= now){
+      var q = queue.shift();
+      q.n.lit = q.t;
+      if(q.depth > 9) continue;
+      for(var i=0;i<q.n.adj.length;i++){
+        var e = q.n.adj[i], o = e.a === q.n ? e.b : e.a;
+        if(q.seen.has(o) || rnd() > .78) continue;
+        q.seen.add(o);
+        e.from = q.n; e.t = q.t;
+        queue.push({n:o, t:q.t + e.len / SPEED, depth:q.depth + 1, seen:q.seen});
+      }
+    }
+  }
+
+  function draw(now){
+    ctx.fillStyle = '#0E1B2C'; ctx.fillRect(0, 0, W, H);
+    ctx.lineCap = 'round';
+    // 下地の道
+    ctx.strokeStyle = 'rgba(147,161,179,.13)'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    for(var i=0;i<edges.length;i++){ ctx.moveTo(edges[i].a.x, edges[i].a.y); ctx.lineTo(edges[i].b.x, edges[i].b.y); }
+    ctx.stroke();
+    // 光が通った道
+    for(var j=0;j<edges.length;j++){
+      var e = edges[j]; if(!e.from) continue;
+      var dur = e.len / SPEED, el = now - e.t;
+      if(el < 0) continue;
+      var k = Math.exp(-Math.max(0, el - dur) / FADE);
+      if(k < .02){ e.from = null; continue; }
+      var to = e.from === e.a ? e.b : e.a, pr = Math.min(1, el / dur);
+      var hx = e.from.x + (to.x - e.from.x) * pr, hy = e.from.y + (to.y - e.from.y) * pr;
+      ctx.strokeStyle = 'rgba(242,181,68,' + (.75 * k).toFixed(3) + ')'; ctx.lineWidth = 1.6;
+      ctx.beginPath(); ctx.moveTo(e.from.x, e.from.y); ctx.lineTo(hx, hy); ctx.stroke();
+      if(pr < 1){ // 進んでいる光の先端
+        ctx.fillStyle = 'rgba(247,212,138,.95)';
+        ctx.beginPath(); ctx.arc(hx, hy, 2.2, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+    // 点（つながった点は灯る）
+    for(var m=0;m<nodes.length;m++){
+      var n = nodes[m], kk = Math.exp(-Math.max(0, now - n.lit) / FADE);
+      ctx.fillStyle = kk > .03 ? 'rgba(242,181,68,' + (.25 + .75 * kk).toFixed(3) + ')' : 'rgba(147,161,179,.32)';
+      ctx.beginPath(); ctx.arc(n.x, n.y, kk > .03 ? 2.4 + kk * 1.6 : 1.8, 0, Math.PI * 2); ctx.fill();
+      if(kk > .3){
+        ctx.fillStyle = 'rgba(242,181,68,' + (.12 * kk).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(n.x, n.y, 10 * kk, 0, Math.PI * 2); ctx.fill();
+      }
+    }
+  }
 
   function resize(){
+    var pw = W, ph = H;
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     W = cv.clientWidth; H = cv.clientHeight;
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
-    ctx.setTransform(dpr,0,0,dpr,0,0);
-    cell = Math.max(34, Math.min(58, W / 26));
-    cols = Math.ceil(W / cell) + 1; rows = Math.ceil(H / cell) + 1;
-    if(reduce) draw(0.62);
-  }
-
-  function draw(phase){
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle = '#0E1B2C'; ctx.fillRect(0,0,W,H);
-    // light band travels along diagonal (normalized direction)
-    var dx = 0.86, dy = 0.51;
-    var span = W*dx + H*dy;
-    var pos = -span*0.25 + phase * span * 1.5;
-    var sigma = Math.max(W, H) * 0.16;
-    for(var r=0;r<rows;r++){
-      for(var c=0;c<cols;c++){
-        var x = c*cell, y = r*cell;
-        var cx = x + cell/2, cy = y + cell/2;
-        var d = (cx*dx + cy*dy) - pos;
-        var k = Math.exp(-(d*d)/(2*sigma*sigma));
-        // base cell
-        ctx.fillStyle = 'rgb(' + Math.round(21 + k*38) + ',' + Math.round(38 + k*30) + ',' + Math.round(59 + k*6) + ')';
-        ctx.fillRect(x+gap/2, y+gap/2, cell-gap, cell-gap);
-        // warm glaze
-        if(k > 0.02){
-          ctx.fillStyle = 'rgba(242,181,68,' + (k*0.28).toFixed(3) + ')';
-          ctx.fillRect(x+gap/2, y+gap/2, cell-gap, cell-gap);
-        }
-        // busbars
-        ctx.fillStyle = 'rgba(147,161,179,' + (0.06 + k*0.22).toFixed(3) + ')';
-        ctx.fillRect(x + cell*0.33, y+gap/2, 1, cell-gap);
-        ctx.fillRect(x + cell*0.66, y+gap/2, 1, cell-gap);
-        // spawn photons from brightest cells
-        if(!reduce && k > 0.85 && Math.random() < 0.004 && photons.length < 70){
-          photons.push({x:cx, y:cy, vy:-(0.25+Math.random()*0.5), vx:(Math.random()-.5)*0.2, a:1, s:1+Math.random()*1.6});
-        }
-      }
-    }
-    // photons
-    for(var i=photons.length-1;i>=0;i--){
-      var p = photons[i];
-      p.x += p.vx; p.y += p.vy; p.a -= 0.006;
-      if(p.a <= 0){ photons.splice(i,1); continue; }
-      ctx.beginPath();
-      ctx.fillStyle = 'rgba(247,212,138,' + p.a.toFixed(3) + ')';
-      ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill();
-    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // スマホのアドレスバー出入り程度の高さ変化では、道の形を作り直さない
+    if(W === pw && Math.abs(H - ph) < 160 && nodes.length){ if(reduce) draw(1e6); return; }
+    build();
+    if(reduce){ // 動きを減らす設定では、広がった状態を1枚の絵として描く
+      wave(0); wave(0); step(1e6); draw(1e6);
+    } else { nextWave = 0; }
   }
 
   function loop(now){
     if(!running){ rafId = null; return; }
-    var period = 14000;
-    var phase = ((now - t0) % period) / period;
-    draw(phase);
+    if(now >= nextWave){ wave(now); nextWave = now + 2400 + rnd() * 1600; }
+    step(now); draw(now);
     rafId = requestAnimationFrame(loop);
   }
   function start(){ if(reduce || rafId) return; running = true; rafId = requestAnimationFrame(loop); }
